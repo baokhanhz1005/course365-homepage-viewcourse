@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.slider-fix-padding{
+    padding-top: 60.5px !important;
+}
+
+.img-avatar{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.bg-footer{
+    background-color: rgb(228, 225, 225);
+}
+
+.pointer:hover{
+    cursor: pointer;
+    opacity: 0.9;
+    box-shadow: 2px 2px rgb(139, 125, 125);
+}
+
+.align-form{
+   padding: 30px 0;
+}
+
+

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course 365 - Learning with unlimited!</title>
+  
+  <!-- Nhúng các thư viện BS4 & jQuery, awesome font -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <!-- Các file css và js tự định nghĩa thêm -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+    <!-- 1. Header - Navbar menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a href="#" class="navbar-brand"><img src="./images/Ionic_logo.png" alt="logo"></a>
+      <div class="collapse navbar-collapse form-inline" id="navbar-list">
+          <ul class="navbar-nav mr-auto">
+            <li class="active">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="dropdown nav-item">
+              <div class="nav-link dropdown-toggle text-dark" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Browser course</div>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a href="#" class="dropdown-item">Web Developement</a>
+                <a href="#" class="dropdown-item">Mobile App</a>
+                <a href="#" class="dropdown-item">Desktop App</a>
+              </div>
+            </li>
+            <li class="dropdown nav-item">
+              <div class="nav-link dropdown-toggle text-dark" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</div>
+              <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Vision & Mission</a>
+                <a href="#" class="dropdown-item">Team</a>
+                <a href="#" class="dropdown-item">Contact Us</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+      </div>
+    </nav>
+
+    <!-- 2. Slide body -->
+    
+    <div class="container-fluid slider-fix-padding">
+      <div class="row bg-info d-flex align-items-center">
+        <div class="col-sm-6 mx-auto">
+          <div class="container w-75">
+            <h3 class="text-white font-weight-bold">Welcome to Ionic Course365 Learning Center</h3>
+            <p class="text-white">Ionic Course365 is an online learning and teaching marketplace with over 5000 courses and 1 million students. Instructor and expertly crafted courses, designed for the modern students and entrepreneur.</p>
+            <button class="btn btn-warning" id="btn-get-crud">Browser Courses</button>
+            <button class="btn btn-light">Become an Instructor</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div id="img-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-50" src="./images/ionic-207965.png" alt="First slide">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 3. Courses content -->
+    <div class="container-fluid">
+      <!--         Recommend courses         -->
+      <div id="recommended-course" class="container align-form">
+        <h3 class="align-form">Recommend to you</h3>
+        <div class="card-deck">
+            <div class="card pointer">
+              <img src="./images/courses/course-angular.jpg" alt="angular">
+              <div class="card-body">
+                <h5 class="text-info">How to easily create a website with Angular</h5>
+                <div class="">
+                  <i class="far fa-clock"></i> 3h 56m  Beginner
+                </div>
+                <div class="font-weight-bold">
+                  $600 <s class="text-secondary">$750</s>
+                </div>
+              </div>
+              <div class="card-footer bg-footer d-flex justify-content-between form-inline">
+                <img src="./images/teacher/morris_mccoy.jpg" alt="avatar1" class="img-avatar">
+                   <div class="name-teacher">Morris Mccoy </div>  
+                   <i class="fas fa-bookmark text-right"></i>
+              </div>
+            </div>
+  
+            <div class="card pointer">
+              <img src="./images/courses/course-python.jpg" alt="python">
+              <div class="card-body">
+                <h5 class="text-info">The Python Course: build web application</h5>
+                <div class="">
+                  <i class="far fa-clock"></i> 4h 30m  Advanced
+                </div>
+                <div class="font-weight-bold">
+                  $900 <s class="text-secondary">$1050</s>
+                </div>
+              </div>
+              <div class="card-footer bg-footer d-flex justify-content-between form-inline">
+                <img src="./images/teacher/claire_robertson.jpg" alt="avatar1" class="img-avatar">
+                   <div class="name-teacher">Claire Robertson </div>  
+                   <i class="fas fa-bookmark text-right"></i>
+              </div>
+            </div>
+          
+            <div class="card pointer">
+              <img src="./images/courses/course-graphql.jpg" alt="angular">
+              <div class="card-body height-content">
+                <h5 class="text-info">GraphQL: introduction to graphQL for beginners</h5>
+                <div class="">
+                  <i class="far fa-clock"></i> 2h 15m  Intermediate
+                </div>
+                <div class="font-weight-bold">
+                  $650 <s class="text-secondary">$850</s>
+                </div>
+              </div>
+              <div class="card-footer bg-footer d-flex justify-content-between form-inline">
+                <img src="./images/teacher/ted_hawkins.jpg" alt="avatar1" class="img-avatar">
+                   <div class="name-teacher">Ted Hawkins </div>  
+                   <i class="fas fa-bookmark text-right"></i>
+              </div>
+            </div>
+          
+            <div class="card pointer">
+              <img src="./images/courses/course-javascript.jpg" alt="angular">
+              <div class="card-body">
+                <h5 class="text-info">Getting Started with Javascript</h5>
+                <div class="">
+                  <i class="far fa-clock"></i> 3h 34m  Beginner
+                </div>
+                <div class="font-weight-bold">
+                  $300 <s class="text-secondary">$550</s>
+                </div>
+              </div>
+              <div class="card-footer bg-footer d-flex justify-content-between form-inline">
+                <img src="./images/teacher/ted_hawkins.jpg" alt="avatar1" class="img-avatar">
+                   <div class="name-teacher">Ted Hawkins </div>  
+                   <i class="fas fa-bookmark text-right"></i>
+              </div>
+            </div>
+
+        </div>
+      </div>
+      <!--         Most popular courses         -->
+      <div class="container align-form">
+        <h3 class="align-form">Most popular</h3>
+        <div class="card-deck card-popular">
+          
+        </div>
+      </div>
+      <!--         Trending courses         -->
+      <div class="container align-form mt-n5">
+        <h3 class="align-form">Trending</h3>
+        <div class="card-deck card-trend">
+        
+        </div>
+      </div>
+      
+    </div>
+    <!-- 4. Footer -->
+    <div class="bg-light card-footer">
+      <div class="container">
+        <div class="row form-inline ">
+          <div class="col-sm-6 d-flex justify-content-center form-inline">
+            <i class="far fa-copyright mr-2"></i> 2021 Ionic Course365. All Rights Reserved.
+          </div>
+          <div class="col-sm-6">
+            <div class="navbar-expand navbar justify-content-end font-weight-bold">
+              <a class="nav-item mr-3" href="#">Privacy</a>
+              <a class="nav-item mr-3" href="#">Terms</a>
+              <a class="nav-item mr-3" href="#">Feedback</a>
+              <a class="nav-item mr-3" href="#">Support</a>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //REGION 1:
+      gCoursesDB = {
+    description: "This DB includes all courses in system",
+    courses: [
+        {
+            id: 1,
+            courseCode: "FE_WEB_ANGULAR_101",
+            courseName: "How to easily create a website with Angular",
+            price: 750,
+            discountPrice: 600,
+            duration: "3h 56m",
+            level: "Beginner",
+            coverImage: "images/courses/course-angular.jpg",
+            teacherName: "Morris Mccoy",
+            teacherPhoto: "images/teacher/morris_mccoy.jpg",
+            isPopular: false,
+            isTrending: true
+        },
+        {
+            id: 2,
+            courseCode: "BE_WEB_PYTHON_301",
+            courseName: "The Python Course: build web application",
+            price: 1050,
+            discountPrice: 900,
+            duration: "4h 30m",
+            level: "Advanced",
+            coverImage: "images/courses/course-python.jpg",
+            teacherName: "Claire Robertson",
+            teacherPhoto: "images/teacher/claire_robertson.jpg",
+            isPopular: false,
+            isTrending: true
+        },
+        {
+            id: 5,
+            courseCode: "FE_WEB_GRAPHQL_104",
+            courseName: "GraphQL: introduction to graphQL for beginners",
+            price: 850,
+            discountPrice: 650,
+            duration: "2h 15m",
+            level: "Intermediate",
+            coverImage: "images/courses/course-graphql.jpg",
+            teacherName: "Ted Hawkins",
+            teacherPhoto: "images/teacher/ted_hawkins.jpg",
+            isPopular: true,
+            isTrending: false
+        },
+        {
+            id: 6,
+            courseCode: "FE_WEB_JS_210",
+            courseName: "Getting Started with JavaScript",
+            price: 550,
+            discountPrice: 300,
+            duration: "3h 34m",
+            level: "Beginner",
+            coverImage: "images/courses/course-javascript.jpg",
+            teacherName: "Ted Hawkins",
+            teacherPhoto: "images/teacher/ted_hawkins.jpg",
+            isPopular: true,
+            isTrending: true
+        },
+        {
+            id: 8,
+            courseCode: "FE_WEB_CSS_111",
+            courseName: "CSS: ultimate CSS course from beginner to advanced",
+            price: 750,
+            discountPrice: 600,
+            duration: "3h 56m",
+            level: "Beginner",
+            coverImage: "images/courses/course-css.jpg",
+            teacherName: "Juanita Bell",
+            teacherPhoto: "images/teacher/juanita_bell.jpg",
+            isPopular: true,
+            isTrending: true
+        },
+        {
+            id: 14,
+            courseCode: "FE_WEB_WORDPRESS_111",
+            courseName: "Complete Wordpress themes & plugins",
+            price: 1050,
+            discountPrice: 900,
+            duration: "4h 30m",
+            level: "Advanced",
+            coverImage: "images/courses/course-wordpress.jpg",
+            teacherName: "Clevaio Simon",
+            teacherPhoto: "images/teacher/clevaio_simon.jpg",
+            isPopular: true,
+            isTrending: false
+        }
+    ],
+    
+       filterCoursePopular : function(paramIsPopular){
+         var vPopular = [];
+         for(var bI = 0; bI < gCoursesDB.courses.length; bI ++){
+           if(gCoursesDB.courses[bI].isPopular == paramIsPopular.isPopular){
+             vPopular.push(gCoursesDB.courses[bI]);
+           }
+         }
+         return vPopular;
+       },
+       filterCourseTrending : function(paramIsTrending){
+         var vTrending = [];
+         for(var bI = 0; bI < gCoursesDB.courses.length; bI ++){
+           if(gCoursesDB.courses[bI].isTrending == paramIsTrending.isTrending){
+            vTrending.push(gCoursesDB.courses[bI]);
+           }
+         }
+         return vTrending;
+       }
+   
+}
+      
+
+      //REGION 2:
+      $(document).ready(function(){
+        onPageLoading();
+        $("#btn-get-crud").on("click", onBtnGetCRUDPage)
+      })
+
+
+      //REGION 3:
+      function onPageLoading(){
+        //LOAD KHOA HOC POLULAR
+        loadingCoursePopular();
+
+        //LOAD KHOA HOC TRENDING
+        loadingCourseTrending();
+      }
+
+      function onBtnGetCRUDPage (){
+        window.location.href = "crud-course.html"
+      }
+
+
+      //REGION 4:
+      function loadingCoursePopular(){
+        var vFilterData = {
+          isPopular: true
+        }
+
+        var vFilterDataObject = gCoursesDB.filterCoursePopular(vFilterData);
+
+        console.log(vFilterDataObject);
+
+        loadCoursePopular(vFilterDataObject);
+      }
+
+      function loadingCourseTrending(){
+        var vFilterData = {
+          isTrending: true
+        }
+
+        var vFilterDataObject = gCoursesDB.filterCourseTrending(vFilterData);
+
+        console.log(vFilterDataObject);
+
+        loadCourseTrend(vFilterDataObject);
+      }
+
+      function loadCoursePopular(paramFilterDataObject){
+        for(var bI = 0;  bI < paramFilterDataObject.length; bI++){
+          var vCardPopular = $(".card-popular").append(
+            `
+            <div class="card pointer">
+            <img src="./`+ paramFilterDataObject[bI].coverImage +`" alt="angular">
+            <div class="card-body">
+              <h5 class="text-info" style="height:80px">`+ paramFilterDataObject[bI].courseName +`</h5>
+              <div class="">
+                <i class="far fa-clock"></i>`+ paramFilterDataObject[bI].duration + "  " + paramFilterDataObject[bI].level +`
+              <div class="font-weight-bold">`
+                +"$"+ paramFilterDataObject[bI].discountPrice + " "+`<s class="text-secondary">$` + paramFilterDataObject[bI].price +`</s>
+              </div>
+            </div>
+            <div class="card-footer bg-footer d-flex justify-content-between form-inline">
+              <img src="./` + paramFilterDataObject[bI].teacherPhoto +`" alt="avatar1" class="img-avatar">
+                 <div class="name-teacher">`+ paramFilterDataObject[bI].teacherName + `</div>  
+                 <i class="fas fa-bookmark text-right"></i>
+            </div>
+          </div>
+            `
+          );  
+        }
+      }
+
+      function loadCourseTrend(paramFilterDataObject){
+        for(var bI = 0;  bI < paramFilterDataObject.length; bI++){
+          var vCardTrend = $(".card-trend").append(
+            `
+            <div class="card pointer">
+            <img src="./`+ paramFilterDataObject[bI].coverImage +`" alt="angular">
+            <div class="card-body">
+              <h5 class="text-info" style="height:80px">`+ paramFilterDataObject[bI].courseName +`</h5>
+              <div class="">
+                <i class="far fa-clock"></i>`+ paramFilterDataObject[bI].duration + "  " + paramFilterDataObject[bI].level +`
+              <div class="font-weight-bold">`
+                +"$"+ paramFilterDataObject[bI].discountPrice + " "+`<s class="text-secondary">$` + paramFilterDataObject[bI].price +`</s>
+              </div>
+            </div>
+            <div class="card-footer bg-footer d-flex justify-content-between form-inline">
+              <img src="./` + paramFilterDataObject[bI].teacherPhoto +`" alt="avatar1" class="img-avatar">
+                 <div class="name-teacher">`+ paramFilterDataObject[bI].teacherName + `</div>  
+                 <i class="fas fa-bookmark text-right"></i>
+            </div>
+          </div>
+            `
+          );  
+        }
+      }
+
+
+
+    </script>
+</body>
+</html>

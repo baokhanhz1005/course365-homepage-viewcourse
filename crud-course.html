@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Detail</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        .row + .row {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h3 class="text-info text-center">QUẢN TRỊ KHOÁ HỌC</h3>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label for="looking-course">Chọn khoá học</label>
+                </div>
+                <div class="col-sm-8">
+                    <select name="course" id="select-course" class="form-control">
+
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <button id="btn-search-course" class="btn btn-success">Tìm kiếm</button>
+                </div>
+            </div>
+        </div>
+        <table id="table-course" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã khoá học</th>
+                    <th>Tên khoá học</th>
+                    <th>Học phí</th>
+                    <th>Thời lượng</th>
+                    <th>Trình độ</th>
+                    <th>Ảnh khoá học</th>
+                    <th>Tên giảng viên</th>
+                    <th>Ảnh giảng viên</th>
+                    <th>Phổ biến</th>
+                    <th>Xu hướng</th>
+                </tr>
+            </thead>
+            <tbody class="pointer shadow-none">
+
+            </tbody>
+        </table>
+        
+    </div>
+
+
+    <div id="modal-course" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header bg-success text-center">
+              <h2 class="text-center text-white">CHECKING COURSE PRESENT</h2>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="jumbotron">
+                <div class="container">
+                  <div class="row">
+                    <label for="username" class="font-weight-bold font-italic">Thông tin khoá học</label>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="usernamee">Id course</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-id" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="firstname">Mã course</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-code" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="lastname">Tên course</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-name" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="usernamee">Học phí</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-price" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="firstname">Thời lượng</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-duration" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="lastname">Trình độ</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-level" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="usernamee">Giảng viên</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-teacher" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="firstname">Phổ biến</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-popular" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="lastname">Xu hướng</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-course-trend" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="usernamee">Link ảnh course</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-link-course" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label for="firstname">Link ảnh teacher</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="text" name="username" id="inp-link-teacher" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    
+
+                  </div>
+
+
+                  
+                  
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                  <div class="row">
+                      <button id="btn-update" class="btn btn-success mr-2">Update data</button>
+                      <button id="btn-delete" class="btn btn-danger">Delete data</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script>
+        //REGION 1:
+        gCoursesDB;
+
+        const gSTT = 0;
+        const gCOURSE_CODE = 1;
+        const gCOURSE_NAME = 2;
+        const gPRICE_COURSE = 3;
+        const gDURATION = 4;
+        const gLEVEL = 5;
+        const gIMAGE_COURSE = 6;
+        const gTEACHER_NAME = 7;
+        const gTEACHER_IMAGE = 8;
+        const gIS_POPULAR = 9;
+        const gIS_TRENDING = 10;
+        
+        var gSttRow = 0;
+        var gSrcImage = "";
+
+        var gColName = ["id", "courseCode" , "courseName", "price" , "duration", "level" ,"coverImage", "teacherName", "teacherPhoto", "isPopular", "isTrending"]
+        var gTableCourse = $("#table-course").DataTable({
+            searching: false,
+            lengthChange: false,
+            columns: [
+            {data: gColName[gSTT]},
+            {data: gColName[gCOURSE_CODE]},
+            {data: gColName[gCOURSE_NAME]},
+            {data: gColName[gPRICE_COURSE]},
+            {data: gColName[gDURATION]},
+            {data: gColName[gLEVEL]},
+            {data: gColName[gIMAGE_COURSE]},
+            {data: gColName[gTEACHER_NAME]},
+            {data: gColName[gTEACHER_IMAGE]},
+            {data: gColName[gIS_POPULAR]},
+            {data: gColName[gIS_TRENDING]}
+        ],
+        columnDefs: [
+            {targets: gSTT,
+            render: function (){
+                gSttRow++;
+                return gSttRow;
+            }},
+            {targets: gIMAGE_COURSE,
+                render: function getImgTeacher(paramDataImgCourse){
+                    console.log(paramDataImgCourse);
+                return "<img src='./" + paramDataImgCourse + "' style='width: 150px;' alt=img>";
+                }   
+            },
+            {targets: gTEACHER_IMAGE,
+                render: function getImgTeacher(paramData){
+                    console.log(paramData);
+                return "<img src='./" + paramData + "' style='width: 100px;' alt=img>";
+                }   
+            }
+
+        ]
+        })
+
+
+        //REGION 2:
+        $(document).ready(function(){
+            onPageLoading();
+            $("#btn-search-course").on("click", onBtnClickSearch);
+            $("#table-course").on("click", "tr" , function(){
+                onBtnClickRow(this);
+            })
+            $("#btn-update").on("click", onBtnUpdateData)
+        })
+
+
+        //REGION 3:
+        function onPageLoading(){
+            loadDataTable(gCoursesDB.courses);
+
+            loadSelectCourse(gCoursesDB.courses);
+
+            
+        }
+
+        function onBtnClickSearch(){
+            var vDataToFilter = {
+                    courseID: 0
+                }
+
+            getDataFilter(vDataToFilter);   
+            filterCourseByID(vDataToFilter);
+        }
+
+        function onBtnClickRow(paramRowClick){
+            // var vRowClick = paramRowClick.closest('tr');
+            var vDataRow = gTableCourse.row(paramRowClick).data();
+            console.log(vDataRow);
+            // resetModalForm();
+            loadDataToModal(vDataRow);
+        }
+
+        function onBtnUpdateData(){
+            var vDataUpdate = {
+                id: "",
+                courseCode: "",
+                courseName: "",
+                price: 0,
+                duration: "",
+                level: "",
+                teacherName: "",
+                teacherPhoto: "",
+                isPopular: false,
+                isTrending: true
+
+            }
+        }
+
+
+        //REGION 4:
+
+        function loadDataTable(paramDataTable){
+            gSttRow = 0;
+            gTableCourse.clear();
+            gTableCourse.rows.add(paramDataTable);
+            gTableCourse.draw();
+            
+        }
+
+        function loadSelectCourse(paramDataTable){
+            var vSelectCourse = $("#select-course");
+            var bOption = $("<option>", {
+                    text: "--- Chọn tất cả ----",
+                    value: 0
+                }).appendTo(vSelectCourse);
+
+            for(var bI = 0; bI < paramDataTable.length; bI ++){
+                var bOption = $("<option>", {
+                    text: getNameCourse(paramDataTable[bI].id),
+                    value: paramDataTable[bI].id
+                }).appendTo(vSelectCourse);
+            }
+        }
+
+        function getDataFilter(paramDataIDFilter){
+            paramDataIDFilter.courseID = $("#select-course").val();
+        }
+
+        function getNameCourse(paramIDCourse){
+            if(paramIDCourse == 1){
+                return "Angular";
+            }
+            if(paramIDCourse == 2){
+                return "Python";
+            }
+            if(paramIDCourse == 5){
+                return "GraphQL";
+            }
+            if(paramIDCourse == 6){
+                return "Javascript";
+            }
+            if(paramIDCourse == 8){
+                return "CSS";
+            }
+            if(paramIDCourse == 14){
+                return "WordPress";
+            }
+        }
+
+        function filterCourseByID(paramDataIDFilter){
+            debugger;
+            var vCourseFilter = [];
+            vCourseFilter = gCoursesDB.courses.filter(function(paramCourseDB){
+
+                return paramDataIDFilter.courseID == 0 || paramDataIDFilter.courseID == paramCourseDB.id
+            });
+            loadDataTable(vCourseFilter);
+        }
+
+        function loadDataToModal(paramDataRow){
+
+            $("#inp-course-id").val(paramDataRow.id);
+            $("#inp-course-code").val(paramDataRow.courseCode);
+            $("#inp-course-name").val(paramDataRow.courseName);
+
+            $("#inp-course-price").val(paramDataRow.price);
+            $("#inp-course-duration").val(paramDataRow.duration);
+            $("#inp-course-level").val(paramDataRow.level);
+
+            $("#inp-course-teacher").val(paramDataRow.teacherName);
+            $("#inp-course-popular").val(paramDataRow.isPopular);
+            $("#inp-course-trend").val(paramDataRow.isTrending);
+
+            $("#inp-link-course").val(paramDataRow.coverImage);
+            $("#inp-link-teacher").val(paramDataRow.teacherPhoto);
+
+
+            $("#modal-course").modal("show");
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
